@@ -1,0 +1,132 @@
+.container {
+  /* THE CONTINUUM FIX: */
+  /* This forces the content to be exactly the width of a phone, centered. */
+  width: var(--spirit-width);
+  margin: 0 auto; /* Centers the column on Desktop */
+  
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: min(100%, var(--spirit-width));
+  text-align: center;
+  padding: 24px;
+  background: rgba(7, 20, 40, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: var(--radius-soft);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0 0 8px;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.cta {
+  background: var(--accent);
+  color: #041222;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform var(--transition-fast);
+}
+
+.cta:active {
+  transform: scale(0.96);
+}
+
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 85vh; /* Takes up most of the screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* The Water Background */
+  background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?q=80&w=2560&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  
+  /* Dark overlay to make text pop */
+  box-shadow: inset 0 0 0 2000px rgba(7, 20, 40, 0.3);
+}
+
+/* The White Box Border */
+.logoBox {
+  width: 100%; /* Fill the Spirit Width */
+  border: 5px solid #fff;
+  padding: 2.5rem 0; /* Vertical padding only, let width handle horizontal */
+  margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  backdrop-filter: blur(2px); /* Subtle blur to separate from world */
+}
+
+/* Stacked Logo Text */
+.titleMain {
+  font-family: 'Oswald', sans-serif;
+  font-size: 5rem; 
+  font-weight: 700;
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+}
+
+.tagline {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 32px;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.shopBtn {
+  width: 100%; /* Button fills the Spirit Width */
+  max-width: 280px; /* Aesthetic cap so it's not too wide */
+  background: var(--accent);
+  color: white;
+  height: 56px; /* Fixed touch target height */
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.shopBtn:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+/* On mobile, we might scale the font slightly, but the layout structure remains identical */
+@media (max-width: 450px) {
+  .titleMain { font-size: 4.5rem; }
+  .logoBox { border-width: 4px; }
+}

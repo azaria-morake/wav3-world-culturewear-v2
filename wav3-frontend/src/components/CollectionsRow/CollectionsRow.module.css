@@ -1,0 +1,62 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  
+  /* CRITICAL: Center Alignment Logic */
+  /* We add padding equal to half the screen minus half the card width. */
+  /* This ensures the first card sits dead-center in the Spirit Zone. */
+  padding-left: calc(50vw - (var(--spirit-width) / 2));
+  padding-right: calc(50vw - (var(--spirit-width) / 2));
+  
+  scrollbar-width: none; /* Firefox */
+}
+
+.wrapper::-webkit-scrollbar { 
+  display: none; /* Chrome/Safari */
+}
+
+.card {
+  /* The card is EXACTLY the width of the Spirit Zone (Phone width) */
+  flex: 0 0 var(--spirit-width);
+  height: 55vh;
+  
+  scroll-snap-align: center; /* Snap to center of the Spirit Zone */
+  
+  border-radius: var(--radius-soft);
+  position: relative;
+  overflow: hidden;
+  transition: opacity 0.3s;
+  cursor: pointer;
+  
+  /* Visual styling */
+  background: #112233;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.9) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+}
+
+.title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
+}
+
+.link {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}

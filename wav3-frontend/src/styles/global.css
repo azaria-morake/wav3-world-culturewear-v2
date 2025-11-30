@@ -1,0 +1,32 @@
+/* 1. Force padding to be included in width (The Fix) */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Prevent the entire page from scrolling horizontally */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--body-font);
+  background: var(--bg-base);
+  color: var(--text-core);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Global Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: #334;
+  border-radius: 4px;
+}

@@ -1,0 +1,46 @@
+.header {
+  position: absolute; /* Floats over the hero image */
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  z-index: 50;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: flex;
+  gap: 32px;
+}
+
+.navLink {
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Mobile check: hidden on small screens for now, or use a hamburger */
+@media (max-width: 768px) {
+  .nav { display: none; } 
+  .header { justify-content: center; }
+}
